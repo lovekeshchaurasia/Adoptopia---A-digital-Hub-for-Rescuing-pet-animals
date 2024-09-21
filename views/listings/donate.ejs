@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Razorpay</title>
+  <!-- <link rel='stylesheet' href='css/boilerplate.css' /> -->
+  <link rel="stylesheet" href="css/gateway.css">
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    /* background-image: url('5.png'); */
+    background-color: blanchedalmond;
+  }
+  .header {
+    background-color: #f0f0f0;
+    /* padding: 20px; */
+    text-align: center;
+    margin-left: 0px 4px;
+  }
+  .donation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    position: relative;
+    bottom: 15%;
+  }
+  #ngo-logo {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 140px;
+  }
+  #donate-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  #donate-btn:hover {
+    background-color: #0056b3;
+  }
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+<body>
+  <div class="header">
+    <div id="nav"> 
+      <div id="navPart1">
+         <a style="cursor: pointer;" href="/"><img src="../images/logo.png" alt=""></a> 
+         <a style="text-decoration: none; color: #57127F;" href="/"><h4 style="cursor: pointer;">Adoptopia</h4></a> 
+      </div>
+      <div id="navPart2">
+          <div class="navElements">
+              <h4>Adopt</h4>
+          </div>
+          <div class="navElements">
+             <a style="color: white; text-decoration: none; cursor: pointer;" href="/rescue"><h4>Rescue</h4></a>
+          </div>
+          <div class="navElements">
+          <a style="color: white; text-decoration: none;cursor: pointer;" href="/donate"><h4>Donate</h4></a> 
+          </div>
+          <div class="navElements">
+            <a style="color: white;text-decoration: none;" href="/contactus"><h4>Contact</h4></a> 
+          </div>
+          <div class="navElements">
+             <a style="color: white;text-decoration: none; cursor: pointer;" href="/blogs"><h4>blogs</h4></a> 
+          </div>
+          <div class="navElements">
+           <a style="color: white;text-decoration: none; cursor: pointer;" href="/aboutus"><h4>about</h4></a>   
+          </div>
+
+      </div>
+      <div id="navPart3">
+         <a href="/login"><button id="login" style="cursor: pointer;">LogIn</button></a>
+         <a href="/signup"><button id="signup" style="cursor: pointer;">Sign up</button></a> 
+         <a href="/logout"><button id="signup" style="cursor: pointer;">Log out</button></a> 
+      </div>
+  </div> 
+    <h1 style="position: relative;top: 100px;">Making a Difference Together</h1>
+  </div>
+  
+  <div class="donation-container">
+    <img id="ngo-logo" src="../images/logo.png" alt="NGO Logo">
+    <p style="position: relative;bottom: 100px;">We proudly support <strong>Smile Foundation</strong> in their noble cause.</p>
+    <button style="position: relative;bottom: 100px;" id="donate-btn" class="rzp-button1">Donate Now</button>
+  </div>
+
+  <div class="footer">
+    <p>Contact us at: example@example.com</p>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <!-- <script>
+    var orderId;
+    $(document).ready(function () {
+      var settings = {
+        "url": "/create/OrderId",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+          "amount": "100"
+        }),
+      };
+
+      $.ajax(settings).done(function (response) {
+
+        var options = {
+          "key": "rzp_test_YxNwtBdLGDL0Pr", // Enter the Key ID generated from the Dashboard
+          "amount": response.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+          "currency": "INR",
+          "name": "Apple",
+          "description": "Think Different",
+         
+          "order_id": response.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+          "handler": function (response) {
+            var settings1 = {
+              "url": "/api/payment/verify",
+              "method": "POST",
+              "timeout": 0,
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "data": JSON.stringify({ response }),
+            }
+          
+
+          $.ajax(settings1).done(function(response){
+            if(response == true){
+              alert("Payment Successful")
+            }else{
+              alert("Payment Failed")
+            }
+e          })
+          },
+        
+          "notes": {
+            "address": "Razorpay Corporate Office"
+          },
+          "theme": {
+            "color": "#3399cc"
+          }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.on('payment.failed', function (response) {
+          alert(response.error.code);
+          alert(response.error.description);
+          alert(response.error.source);
+          alert(response.error.step);
+          alert(response.error.reason);
+          alert(response.error.metadata.order_id);
+          alert(response.error.metadata.payment_id);
+        });
+        document.getElementById('rzp-button1').onclick = function (e) {
+          rzp1.open();
+          e.preventDefault();
+        }
+
+        orderId = response.id;
+        console.log(response.id);
+        $("button").show();
+      });
+    });
+  </script> -->
+  <!-- <button id="rzp-button1" style="position: relative;top: 200px;">pay</button> -->
+
+
+  <script src="javascript/donate.js"></script>
+</body>
+</html>

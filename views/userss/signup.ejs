@@ -1,0 +1,127 @@
+<!-- <% layout("/layouts/boilerplate") %>
+
+<div style="position: relative;top: 150px;" class="row mt-3">
+    <h1 style="margin-left: 212px; position: relative;bottom: 25px;" class="col-6 offset">SignUp on Adoptopia</h1>
+    <div class="col-6 offset-2">
+        <form action="/signup" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+            <input name="username" id="username" type="text" class="form-control" required />
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+            <input name="email" id="email" type="email" class="form-control" required />
+        </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+            <input name="password" id="password" type="password" class="form-control" required />
+        </div>
+        <button class="btn btn-success">SignUp</button>
+        </form>
+    </div>
+</div> -->
+
+
+
+<% layout("/layouts/boilerplate") %>
+
+<style>
+     @keyframes slideIn {
+        from {
+            opacity: 0;
+            scale: 5;
+            transform: translateY(-300px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    body {
+        background-image: url('../images/poster.png');
+        background-blend-mode: saturation;
+        background-color: rgba(11, 107, 142, 0.751); /* Change the background color to an RGB value */
+        font-family: Arial, sans-serif; /* Change the font family for better readability */
+    }
+
+    .signup-container {
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        padding: 20px; /* Add padding for better spacing */
+        margin-top: 50px; /* Adjust top margin for better positioning */
+    }
+
+    .signup-form {
+        animation: slideIn 1.5s backwards;
+    }
+
+    .signup-form h1 {
+        color: #333; /* Change heading color */
+        margin-left: 212px; /* Adjust left margin */
+        position: relative;
+        bottom: 25px;
+    }
+
+    .signup-form label {
+        color: #555; /* Change label text color */
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0; /* Adjust margins for better spacing */
+        border: 1px solid #ccc; /* Add border for input fields */
+        border-radius: 5px; /* Add border radius */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    }
+
+    .signup-form button {
+        background-color: #4CAF50; /* Green background color for the button */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .signup-form button:hover {
+        background-color: #45a049; /* Darker green color on hover */
+    }
+
+    .signup-form a {
+        color: #007bff; /* Change link text color */
+        text-decoration: none; /* Remove underline from link */
+    }
+
+    .signup-form a:hover {
+        text-decoration: underline; /* Add underline on hover */
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 signup-container">
+            <h1 class="text-center">SignUp on Adoptopia</h1>
+            <form action="/signup" method="POST" class="needs-validation signup-form" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input name="username" id="username" type="text" class="form-control" required />
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input name="email" id="email" type="email" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input name="password" id="password" type="password" class="form-control" required />
+                </div>
+                <button class="btn btn-success btn-block">SignUp</button>
+            </form>
+        </div>
+    </div>
+</div>

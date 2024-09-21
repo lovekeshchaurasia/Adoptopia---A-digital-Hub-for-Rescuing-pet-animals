@@ -1,0 +1,69 @@
+<%- include("../includes/navbar.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/adopt.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="form-container">
+            <div class="container">
+                <div class="title">Rescue</div>
+                <div class="content">
+                    <form action="/rescue" method="POST" enctype="multipart/form-data">
+                        <div class="user-details">
+                            <div class="input-box">
+                                <span class="details">Full Name</span>
+                                <input type="text" name="name" placeholder="Enter your Name" required>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Pet type</span>
+                                <input type="text" name="petType" placeholder="Enter Pet Type" required>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Email</span>
+                                <input type="email" name="email" placeholder="Enter your Email" required>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Phone Number</span>
+                                <input type="number" name="phoneNumber" placeholder="Enter your Number" required>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Location of Animal</span>
+                                <!-- <input type="location" placeholder="Enter Location of Animal" required> -->
+                                <button class="geo-btn">Get Location</button>
+                                <p class="showDetails">User Location Details</p>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Radius</span>
+                                <input type="text" name="radius" placeholder="Area in K.M." required>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Submit">
+                        </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+        <div class="drop-box-container">
+            <div class="hero">
+                <span class="heading1"><h2>Upload Picture of an Animal</h2></span>
+                <label for="input-file" id="drop-area">
+                    <input type="file" name="file" id="input-file" hidden>
+                    <div id="img-view">
+                        <img src="./images/upload.png" alt="">
+                        <p>Drag and Drop or click here<br>to upload images</p>
+                        <span>Upload any images from desktop</span>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </form>
+    </div>
+    <script src="javascript/rescue.js"></script>
+</body>
+</html>

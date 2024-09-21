@@ -1,0 +1,81 @@
+#nav {
+    /* margin-top: -20px; */
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ccbcd4;
+    color: #57127F;
+    font-size: 20px;
+    /* border-bottom: 2px solid #57127F; */
+    position: absolute;
+    z-index: 4;
+    font-family: animal;
+
+}
+#nav img {
+    height: 60px;
+    margin: 0px 0px;
+    background-color: #57127F;
+    border-radius: 50%;
+    margin: 0px 12px;
+}
+#navPart1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navPart2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    /* background-color: #57127F; */
+    height: 80px;
+    color: rgb(24, 21, 21);
+    transition: all ease 0.2s;
+    /* border-radius: 50px; */
+}
+
+#navPart2 h4 {
+    /* text-transform: capitalize; */
+    padding: 0px 20px;
+    letter-spacing: 2.5px;
+    color: black;
+}
+#navPart2 h4:hover{
+    color: white;
+}
+#navPart2 .navElements {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+#navPart2 .navElements:hover {
+    background-color: #a475c2;
+
+}
+
+@font-face {
+    font-family: animal;
+    src: url(../images/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+
+/* #navPart3 button {
+    height: 40px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#navPart3 #signup {
+    background-color: #57127F;
+    color: #fff;
+} */

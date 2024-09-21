@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Buttons</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: blanchedalmond;
+    }
+    
+    .button {
+        width: 130px;
+        height: 70px; /* Adjust the height as needed */
+        margin: 5px;
+        font-size: 26px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<a href="/loginAdmin"><button class="button">Admin</button></a> 
+<a href="/loginNgo"><button class="button">NGO</button></a> 
+<a href="/loginVeterinary"><button class="button">Veterinary Hospital</button></a> 
+
+</body>
+</html>

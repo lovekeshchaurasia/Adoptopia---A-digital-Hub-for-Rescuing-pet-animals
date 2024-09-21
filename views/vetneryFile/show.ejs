@@ -1,0 +1,45 @@
+<style>
+    body{
+        /* background-color: blanchedalmond; */
+        background-color:rgb(232, 223, 210);
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    img{
+        margin-top: 22px;
+        border-radius: 15px;
+    }
+    h3{
+        line-height: 28px;
+        margin-left: 30px;
+    }
+    .card-body{
+        margin-top: 12px;
+        border: 2px solid red;
+        height: 11rem;
+        width: 22rem;
+        border-radius: 12px;
+        background-color: rgb(182, 126, 126);
+    }
+   
+</style>
+<div class="row mt-3">
+    <div class="col-8 offset-3">
+      <!-- <b style="font-size: xx-large;"><%= listing.name %></b><br><br> -->
+</div>
+<div class="card col-6 offset-3 main" style="padding-left: 0; padding-right: 0;">
+    <img style="height: 80vh !important;width:68%;" src="<%= listing.image.url %>" class="card-img-top show-img"  >
+    <div class="card-body">
+      <p class="card-text">
+        <h3>
+       <b>Name</b> :  <%= listing.name %><br>
+       <b>Email</b> : <%= listing.email %><br>
+       <b>PhoneNumber</b> : <%= listing.phoneNumber %><br>
+        <b>Radius</b> : <%= listing.radius %></h3>
+    </p>
+    </div>
+  </div>

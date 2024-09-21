@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #57127F;
+}
+
+@font-face {
+    font-family: animal;
+    src: url(../images/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+#loader{
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    transition: all ease 0.1s;
+}
+#purple1{
+    height: 100vh;
+    width: 100%;
+    background-color: #552473;
+    position: absolute;
+    z-index: 8;
+}
+
+#loader video{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 6;
+    object-fit: cover;
+}
+#purple2{
+    height: 100vh;
+    width: 100%;
+    background-color: #552473;
+    position: absolute;
+    z-index: 5;
+}
+#purple2 img{
+    height: 600px;
+    width: 600px;
+    margin-top: 6%;
+    margin-left: 30%;
+}
+
+#main {
+    background-color: #57127F;
+
+}
+
+
+#nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ccbcd4;
+    color: #57127F;
+    font-size: 20px;
+    /* border-bottom: 2px solid #57127F; */
+    position: absolute;
+   z-index: 4;
+    font-family: animal;
+    margin-top: 10px;
+}
+
+#navPart1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navPart1 img {
+    height: 60px;
+    margin: 0px 0px;
+    background-color: #57127F;
+    border-radius: 50%;
+    margin: 0px 12px; 
+}
+
+#navPart2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    background-color: #57127F;
+    height: 80px;
+    color: white;
+    height: 60px;
+    transition: all ease 0.2s;
+    border-radius: 50px;
+}
+
+#navPart2 h4 {
+    /* text-transform: capitalize; */
+    padding: 0px 20px;
+    letter-spacing: 2.5px;
+  
+}
+
+#navPart2 .navElements {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+#navPart2 .navElements:hover{
+    background-color: #a475c2;
+
+}
+
+
+
+#navPart3 button {
+    height: 40px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#navPart3 #signup{
+    background-color: #57127F;
+    color: #fff;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: #ccbcd4;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+position: relative;
+}
+
+#page1 #bottom {
+    width: 600px;
+    height: 150px;
+    position: absolute;
+    top: 73%;
+    left: 6%;
+}
+
+#page1 #bottom #b1 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+}
+
+#page1 #bottom #b1 h5 {
+    font-family: animal;
+    font-size: 16px;
+    margin-top: 20%;
+    
+    letter-spacing: 2.5px;
+}
+
+#b1 .cate {
+    height: 60px;
+    width: 135px;
+    color: #fff;
+    background-color: #552473;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+#page1 #bottom #b2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#page1 #bottom #b2 .leta {
+    height: 60px;
+    width: 110px;
+    color: #552473;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 4px solid #552473;
+    padding: 0px 8px;
+}
+
+#page1 #bottom #b2 .leta:nth-child(4) {
+    border: none;
+    width: 240px;
+}
+
+#page1 #bottom #b2 .leta h5 {
+    margin: 0px 8px;
+}
+
+#page1 #bottom #b2 .leta input {
+    padding: 6px 9px;
+    background-color: #57127F;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 18px;
+  
+}
+
+#mian1 {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0% 40px;
+ 
+}
+
+#mian1 h1 {
+    font-size: 52px;
+    color: #57127F;
+    font-family: animal;
+}
+
+#mian1 h2 {
+    color: #a475c2;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#mian1 p {
+    color: #57127F;
+    margin: 40px 0px;
+    width: 360px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+#mian2 {
+    height: 90%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    
+}
+
+#mian2 img {
+    height: 650px;
+    margin-top: 50px;
+}
+
+#mian3 {
+     padding-left: 80px;
+    height: 100%;
+    width: 20%;
+    color: black;
+    padding-top: 200px;
+    text-align: center;
+    
+}
+#miam3 #swipper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    height: 350px;
+    width: 120px;
+  }
+
+  .swiper-slide:nth-child(1n) {
+    background-color: #57127F;
+    color: #fff;
+  }
+
+  .swiper-slide:nth-child(2n) {
+    background-image: url(../images/1.png);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    background-image: url(../images/2.png);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-slide:nth-child(4n) {
+    background-image: url(../images/3.png);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-slide:nth-child(5n) {
+background-image: url(../images/4.png);
+background-position: center;
+    background-size: cover;  }
+
+  .swiper-slide:nth-child(6n) {
+background-image: url(../images/5.png);
+background-position: center;
+    background-size: cover;  }
+
+#page2 {
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+}
+
+#page3 {
+    height: 100vh;
+    width: 100%;
+    background-color: green;
+}

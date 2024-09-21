@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrative</title>
+</head>
+<style>
+    body{
+        background-color: rgb(27, 50, 19);
+    }
+    /* #main{
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        background-color: purple;
+        margin: 0px;
+        padding: 0px;
+    } */
+    #left > img{
+        height: 60px;
+        width: 60px;
+        position: relative;
+        left: 22px;
+    }
+    #nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+        height: 55px;
+    }
+    #left{
+        width: 30%;
+    }#mid{
+        width: 33%;
+    }#right{
+        width: 33%;
+    }#btn{
+        background-color: black;
+        color: white;
+        height: 30px;
+        width: 60px;
+        border-radius: 10px;
+    }
+    #btn:hover{
+        background-color: white;
+        color: black;
+        border-radius: 9px;
+        cursor: pointer;
+    }
+    #bt{
+        cursor: pointer;
+        background-color: rgb(126, 14, 14);
+        color: white;
+        height: 78px;
+        width: 148px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 33px;
+        position: relative;
+        top: 250px;
+        left: 32%;
+        right: 50%;
+        margin-left: 60px;
+    }
+</style>
+<body>
+    <div id="main">
+        <div id="nav">
+            <div id="left">
+                <img src="../images/logo.png" alt="">
+            </div>
+            <div id="mid">ADMIN</div>
+            <div id="right">
+                <a href="/logoutAdmin"><Button id="btn">Log out</Button></a>
+            </div>
+        </div>
+        <button id="bt">NGO</button>
+        <a href="/vetData"><button id="bt">Vetnery</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetnery Admin Page</title>
+</head>
+<style>
+    #main{
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        margin: 0px;
+        padding: 0px;
+    }
+    #left > img{
+        height: 60px;
+        width: 60px;
+        position: relative;
+        left: 22px;
+    }
+    .vet{
+        display: flex;
+       flex-wrap: wrap;
+       justify-content: space-evenly;
+    }
+    #nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+        height: 55px;
+    }
+    #left{
+        width: 30%;
+    }#mid{
+        width: 33%;
+    }#right{
+        width: 33%;
+    }#btn{
+        background-color: black;
+        color: white;
+        height: 30px;
+        width: 60px;
+        border-radius: 10px;
+    }
+    #btn:hover{
+        background-color: white;
+        color: black;
+        border-radius: 9px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="main">
+        <div id="nav">
+            <div id="left">
+                <img src="../images/logo.png" alt="">
+            </div>
+            <div id="mid">Vetnery Admin</div>
+        </div>
+    </div>
+
+    <!-- Main code starts from here -->
+
+    <!-- Here ejs mate is used -->
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 vet">
+        <% for(listing of allListings ){ %>
+            <div class="card col" style=" width: 250px;height: 250px; margin: 35px 4px; padding: 8px 8px;">
+               <a style="position: relative;bottom: 2px;cursor: pointer;text-decoration: none;background: rgb(55, 46, 46);color: white;text-align: center;border-radius: 5px;" href="/vetData/<%= listing._id %>"> <img src= "<%= listing.image.url %>" class="card-img-top" style="height: 100%; width: 100%; border-radius: 15px;"/> </a>
+                <!-- <a style="position: relative;bottom: 2px;cursor: pointer;text-decoration: none;background: rgb(55, 46, 46);color: white;text-align: center;border-radius: 5px;" href="/vetData/<%= listing._id %>" class="listing-link">open</a> -->
+
+               <input type="checkbox"><button style="background-color: black;color: white;border-radius: 20%;cursor: pointer;">ok</button>
+               <div class="card-body" style="text-align: center;">
+               <p class="card-text"><b><%= listing.name %></b> <br><hr>
+                <!-- <p class="card-text"><b><%= listing.email %></b> <br>
+                  <p class="card-text"><b><%= listing.phoneNumber %></b><br> -->
+                </p>
+                </div>
+              </div>
+              <% } %>
+    </div>
+
+</body>
+</html>

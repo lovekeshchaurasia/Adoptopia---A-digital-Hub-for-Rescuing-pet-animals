@@ -1,0 +1,177 @@
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const MONGO_URL = "mongodb://127.0.0.1:27017/Adoptopia";
+const path = require("path");
+const session = require('express-session'); 
+const methodOverride = require("method-override");
+// const userRouter = require("./routes/user.js");
+// const adminRouter = require("./routes/admin.js")  
+// Connect to MongoDB database
+const ejsMate = require("ejs-mate");
+const passport = require("passport");
+const LocalStrategy = require('passport-local').Strategy;
+const User = require("./models/user.js");
+// const Admin = require("./models/admin.js");
+const Contact =require('./models/contact.js');
+const {isLoggedIn} = require("./middleware.js");
+
+// const adminLogin = require("./AdminLogin/adminLogin.js");   
+
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
+app.engine("ejs", ejsMate);
+app.use(passport.initialize());
+app.use(session({
+  secret: 'your_secret_key_here',
+  resave: false,
+  saveUninitialized: false
+}));
+main()
+  .then((res) => {
+    console.log("connected to db");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+async function main() {
+  await mongoose.connect(MONGO_URL);
+}
+const sessionOptions = {
+  secret: 'your_secret_key',
+  resave: false,
+  saveUninitialized: false
+};
+
+
+// app.use("/" , userRouter);
+// app.use("/" , adminRouter);
+// app.use("/" , adminLogin)
+// app.use("/" , contactSchema);
+
+app.get("/", (req, res) => {
+    res.render("./home/home.ejs");
+  });
+app.get("/donate" ,isLoggedIn , (req , res)=> {
+  res.render("./listings/donate.ejs")
+})
+app.get("/contactus" , (req , res , next)=>{
+  console.log(req.user);
+  if(!req.isAuthenticated()) {
+    return res.redirect("/login")
+  }next();
+} ,(req , res) => {
+  res.render("./home/contact.ejs")
+});
+app.get("/rescue" , (req ,res , next)=>{
+  if(!req.isAuthenticated()) {
+    return res.redirect("/login")
+  }next();
+}  , (req , res)=>{
+  res.render('./home/rescue.ejs');
+})
+app.post("/contact" , async(req , res)=> {
+  console.log(req.body)
+  const{name,email,phoneNumber,message}= req.body;
+  const newContact = new Contact({
+    name : name ,
+    email : email ,
+    phoneNumber : phoneNumber ,
+    message : message
+  });
+  await newContact.save();
+  res.redirect("/");
+})
+app.use(session(sessionOptions));
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// passport.use(new LocalStrategy(Admin.authenticate()));
+// passport.serializeUser(Admin.serializeUser());
+// passport.deserializeUser(Admin.deserializeUser());
+
+app.use((err , req , res , next) => {
+  // res.send("Something went wrong")
+  console.log(err);
+  res.render("./listings/error.ejs");
+})
+
+
+
+// app.get("/signupAdmin" , (req , res)=>{
+//   res.render("../Admin/signup.ejs")
+// })
+
+
+// //SIGNUP PAGE
+// app.post("/signupAdmin" , async(req , res)=>{
+//  try{
+//     let{username , email , password}  = req.body;
+//  const newUser = new Admin({email , username});
+//  const registeredUser = await Admin.register(newUser , password);
+//  console.log(registeredUser);
+//  res.redirect("/loginAdmin");
+//  }catch(err) {
+//   console.log(err);
+//     res.redirect("/signupAdmin");
+//  }
+// })
+
+// //LOGIN PAGE 
+// app.get("/loginAdmin" , (req , res)=>{
+//  res.render("../Admin/login.ejs")
+// })
+
+// app.post("/loginAdmin" , passport.authenticate("local" , {
+//  failureRedirect: '/loginAdmin', 
+// }) , async(req , res)=>{
+//  res.redirect("/contactus");
+// })
+app.get("/signup" , (req , res)=>{
+   res.render("./userss/sign.ejs")
+})
+
+
+//SIGNUP PAGE
+app.post("/signup" , async(req , res)=>{
+   try{
+      let{username , email , password}  = req.body;
+   const newUser = new User({email , username});
+   const registeredUser = await User.register(newUser , password);
+   console.log(registeredUser);
+   res.redirect("/login");
+   }catch(err) {
+      res.redirect("/signup");
+   }
+})
+
+//LOGIN PAGE 
+app.get("/login" , (req , res)=>{
+   res.render("./userss/login.ejs")
+})
+
+app.post("/login" , passport.authenticate("local" , {
+   failureRedirect: '/login', 
+}) , async(req , res)=>{
+   res.redirect("/");
+})
+
+app.get("/logout" , (req , res)=>{
+   req.logout((err)=>{
+      if(err) {
+         next(err);
+      }
+      res.redirect("/");
+   })
+})
+
+app.listen(3000, (req, res) => {
+    console.log("server is listening to the port 3000");
+  });

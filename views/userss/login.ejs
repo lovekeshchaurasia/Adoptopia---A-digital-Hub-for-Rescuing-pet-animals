@@ -1,0 +1,118 @@
+<!-- <% layout("/layouts/boilerplate") %>
+
+<div style="position: relative;top: 130px;" class="row mt-3">
+    <div style="margin-left: 212px; margin-bottom: 12px;">
+        <h1 class="col-6 offset">LogIn</h1>
+    </div>
+    <div class="col-6 offset-2">
+        <form action="/login" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label" >Username</label>
+            <input name="username" id="username" type="text" class="form-control" required />
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+            <input name="password" id="password" type="password" class="form-control" required />
+            <a style="text-decoration: none;" href="/signup">create a account</a>
+        </div>
+        <button class="btn btn-success">Login</button>
+        </form>
+    </div>
+</div> -->
+
+<% layout("/layouts/boilerplate") %>
+
+<style>
+     @keyframes slideIn {
+        from {
+            opacity: 0;
+            scale: 5;
+            transform: translateY(-300px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .login-form {
+        animation: slideIn 0.5s ease forwards;
+    }
+    body {
+        background-image: url('../images/poster.png');
+        background-blend-mode: saturation;
+        background-color: rgba(11, 107, 142, 0.751);
+        font-family: Arial, sans-serif; 
+    }
+
+    .login-form {
+        animation: slideIn 1s ease forwards;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        padding: 20px; 
+        margin-top: 50px; 
+    }
+
+    .login-form h1 {
+        color: #333;
+    }
+
+    .login-form label {
+        color: #555; 
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ccc; 
+        border-radius: 5px;
+        box-sizing: border-box; 
+    }
+
+    .login-form button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .login-form button:hover {
+        background-color: #45a049; 
+    }
+
+    .login-form a {
+        color: #007bff;
+        text-decoration: none; 
+    }
+
+    .login-form a:hover {
+        text-decoration: underline; 
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 login-form">
+            <h1 class="text-center">Log In</h1>
+            <form action="/login" method="POST" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input name="username" id="username" type="text" class="form-control" required />
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input name="password" id="password" type="password" class="form-control" required />
+                    <a href="/signup">Create an account</a>
+                </div>
+                <button class="btn btn-success btn-block">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoptopia- Blogs</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="css/blogs.css">
+</head>
+<%- include("../includes/navbar") %>
+<body>
+   
+    <div id="main">
+        <div id="cursor"></div>
+        <div id="page1">
+            <div id="head">
+                <h1>blogs</h1>
+            </div>
+            <h4 id="text">Welcome to the inaugural edition of "Adoptopia Chronicles," a curated collection of insightful articles
+                aimed at fostering the well-being and happiness of our beloved animal companions. Within these pages,
+                you will embark on a journey through the diverse realms of pet care, from the intricacies of animal
+                health and vaccination protocols to the nuances of selecting the perfect furry friend for your home. Our
+                team of expert contributors delves into the latest trends and research, offering invaluable guidance for
+                new pet owners navigating the joys and challenges of pet parenthood. Whether you seek advice on
+                optimizing your pet's health, exploring the diverse array of animal breeds suitable for the Indian
+                climate, or simply seeking inspiration for enriching your pet's overall welfare, "Adoptopia Chronicles"
+                is your trusted companion on this fulfilling odyssey of companionship and care. Join us as we embark on
+                a quest to nurture and celebrate the enduring bond between humans and animals, one enlightening article
+                at a time. </h4>
+        </div>
+        <div id="page2" class="page2" style=".page2::-webkit-scrollbar {
+            display: none;
+          }">
+            <div id="review1"></div>
+            <div id="review2"></div>
+        </div>
+        
+
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/javascript/blogs.js"></script>
+</body>
+
+</html>

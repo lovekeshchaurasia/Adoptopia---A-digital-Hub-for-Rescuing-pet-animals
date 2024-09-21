@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    font-family: animal;
+    src: url(../zootopia-jposterscomar-font/ZootopiaJposterscomar-qJ80.ttf);
+}
+#main {
+    height: 100vh;
+    width: 100%;
+    background-color: #CCBCD4;
+    display: flex;
+}
+
+#part1 {
+    height: 100%;
+    width: 35%;
+    position: relative;
+
+}
+
+#main #part2 {
+    height: 100%;
+    width: 35%;
+
+}
+
+#formarea H3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: animal;
+}
+
+#formarea {
+    text-align: center;
+    height: 75%;
+    width: 80%;
+    background-color: #57127F;
+    margin-top: 130px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#formarea input {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    padding: 25px;
+}
+
+.eyes {
+    width: 150px;
+    height: 150px;
+    background-color: #fbf2fb34;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    /* padding: 30px; */
+}
+
+.pupil {
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #fff;
+}
+
+#img {
+    position: absolute;
+    top: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    /* object-fit: contain; */
+}
+
+#part3 {
+    height: 100%;
+    width: 35%;
+
+}
+
+
+#containContact {
+    text-align: center;
+    height: 75%;
+    width: 80%;
+    margin-top: 130px;
+    border-radius: 40px;
+}
+
+#containContact h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: animal;
+    color: #57127F;
+    padding-top: 100px;
+}
+
+#containContact h4 {
+    border-bottom: 2px solid #57127F;
+   text-align: left;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    font-size: 20px;
+    color: #57127F;
+}
+
+#containContact i {
+    color: #fff;
+    background-color: #57127F;
+    padding: 15px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
