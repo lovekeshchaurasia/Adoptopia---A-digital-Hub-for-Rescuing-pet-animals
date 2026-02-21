@@ -1,4 +1,4 @@
-🐾 # Adoptopia – A Digital Hub for Pet Adoption & Rescue
+# Adoptopia – A Digital Hub for Pet Adoption & Rescue
 
 Adoptopia is a full-stack web application designed to connect users with registered NGOs and veterinary hospitals to streamline pet adoption and rescue operations. The platform enables users to adopt pets, report animals in distress, and coordinate assistance efficiently.
 
